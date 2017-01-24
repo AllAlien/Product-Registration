@@ -1,0 +1,32 @@
+header{
+	background: #099;
+	height: 200px;
+	color:#fff;
+}
+.titulo{
+	color:#fff;
+}
+h1, h3{
+	color:#099;
+}
+footer{
+	background: #fff;
+	height: 100px;
+	margin-bottom: 0px;
+}
+
+.form-mod {
+	margin-bottom: 200px;
+	margin-top: 20px;
+}
+.acount-commit{
+	margin-left: 50px;
+}
+.commit{
+	margin-top: 20px;
+}
+.pass{
+	cursor:pointer;
+	color:#099;
+}
+/*ocultar alerts*/
