@@ -10,13 +10,16 @@ if (!isset($_GET['numGerado'])){
 	exit;
 }elseif(isset($_GET['numGerado'])){
 	if (!isset($_SESSION['num_aleatorio_da_sessao'])){
-		echo "Sorry! Sua autenticação falhou!";
+		echo "Sorry! Sua autenticação falhou!<br> Volte a fazer login.";
 		exit;
 	}
 	elseif(isset($_SESSION['num_aleatorio_da_sessao'])){
 		if ($_SESSION['num_aleatorio_da_sessao'] != $_GET['numGerado']){
 			echo "Sorry! Sua autenticação falhou!";
 			exit;
+		}
+		else{
+			unset($_SESSION['num_aleatorio_da_sessao']);
 		}
 	}
 }
@@ -138,6 +141,7 @@ $rows = mysqli_num_rows($query);
 					<li><a href="#">Mudar e-mail</a></li>
 					<li class="divider"></li>
 					<li><a href="#">Mudar nome</a></li>
+					<li><a href="logout.php">Sair</a></li>
 				</ul>
 				</li>
 
