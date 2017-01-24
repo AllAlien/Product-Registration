@@ -30,7 +30,7 @@
 							<label for="nome">
 							Insira seu nome
 							</label>
-								<input required type="text" id="nome" autocomplete="off" name="nome" class="form-control ">
+								<input required="" type="text" id="nome-cad-usu" autocomplete="off" name="nome" class="form-control ">
 						</div>
 						<!--INICIO DO ALERT DE ERRO-->
 						<div id="error-nome-cad" class="alert alert-warning error-name">
@@ -43,7 +43,7 @@
 							<label for="email">
 								Informe seu endereço de email
 							</label>
-							<input required type="email" autocomple="off" name="email" id="email" class="form-control">
+							<input id="mail" required="" type="email" autocomple="off" name="email" id="email" class="form-control">
 						</div>
 						<!--INICIO DO ALERT DE ERRO-->
 						<div id="error-email-cad" class="alert alert-warning error-email">
@@ -56,7 +56,7 @@
 							<label for="senha">
 								Escolha uma senha
 							</label>
-							<input required type="password" name="senha" autocomple="off"class="form-control">
+							<input id="pass" required="" type="password" name="senha" autocomple="off"class="form-control">
 						</div>
 						<!--INICIO DO ALERT DE ERRO-->
 						<div id="error-senha-cad"class="alert alert-warning error-pass">
@@ -65,7 +65,7 @@
 							</button>
 							<b>ATENÇÃO!</b> escolha outra senha.
 						</div>
-						<input type="submit" class="btn btn-primary btn-block" value="Realizar cadastro">
+						<input type="submit" id="submit-cad-usu" class="btn btn-primary btn-block" value="Realizar cadastro">
 						</form>
 						<!--FIM DO FROM DE CADASTRO-->
 
@@ -180,7 +180,7 @@
 
 
 
-
+<script src="js/valida.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
 </body>

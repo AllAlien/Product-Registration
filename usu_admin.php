@@ -2,6 +2,26 @@
 include ("conexao.php");
 session_start();
 
+
+
+
+if (!isset($_GET['numGerado'])){
+	echo "Ops! Você não está acessando esta página de maneira confiável!";
+	exit;
+}elseif(isset($_GET['numGerado'])){
+	if (!isset($_SESSION['num_aleatorio_da_sessao'])){
+		echo "Sorry! Sua autenticação falhou!";
+		exit;
+	}
+	elseif(isset($_SESSION['num_aleatorio_da_sessao'])){
+		if ($_SESSION['num_aleatorio_da_sessao'] != $_GET['numGerado']){
+			echo "Sorry! Sua autenticação falhou!";
+			exit;
+		}
+	}
+}
+
+
 $mailLogin = $_SESSION['email_usu_login'];
 
 $search = "SELECT * FROM product_control WHERE email='$mailLogin'";
@@ -48,7 +68,7 @@ $rows = mysqli_num_rows($query);
 					<label for="nameProduct">
 						Nome do produto
 					</label>
-						<input required type="text" name="nameProduct" class="form-control">
+						<input id="nome-product" required type="text" name="nameProduct" class="form-control">
 				</div>
 				<div class="form-group">
 					<label for="categoryProduct">
@@ -66,14 +86,14 @@ $rows = mysqli_num_rows($query);
 						Preço do produto
 					</label>
 					
-					<input required type="number" name="preco" class="form-control">
+					<input id="preco-product" required type="number" name="preco" class="form-control">
 						
 				</div>
 				<div class="form-group">
 					<label for="message">Observações sobre este produto</label>
 					<textarea name="menssage" id="menssage" cols="30" rows="3" class="form-control"></textarea>
 				</div>
-				<button class="btn btn-primary">Cadastrar produto novo</button>
+				<button id="btn-cad" class="btn btn-primary">Cadastrar produto novo</button>
 			</form>
 					<!--FIM DO FORM DE CAD DE PRODUTOS-->
 						</div>
@@ -139,7 +159,7 @@ $rows = mysqli_num_rows($query);
 						<th>Observações</th>
 						<th>Ações</th>
 					<?php 
-						if ($rows > 0){
+						if ($rows > 0){  
 						//inicio do while de consulta de produtos
 						while ($dadosDoBancoProduct = $query->fetch_array()){
 						?>
@@ -212,6 +232,7 @@ $rows = mysqli_num_rows($query);
 					}else{
 
 					}
+
 					?>	
 
 					</table>
@@ -238,3 +259,4 @@ $rows = mysqli_num_rows($query);
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
 </body>
 </html>
+

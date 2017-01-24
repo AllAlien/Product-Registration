@@ -21,10 +21,11 @@ if($rows > 0){
 		$_SESSION['email_usu_login']=$dadosRequer['email']; 
 		 
 	}
-		
-	header("location:usu_admin.php");
+	$numAleatorio = rand(2000, 8000);
+	$_SESSION['num_aleatorio_da_sessao'] = $numAleatorio;	
+	header("location:usu_admin.php?numGerado=$numAleatorio");
 }else{
-	echo "sorry, login não efetuado";
+	echo "sorry, nehum usuário com esses parametros no sistema.";
 }
 
 ?>
