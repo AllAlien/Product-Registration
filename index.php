@@ -25,7 +25,7 @@
 
 
 				<!--INCIO DO FORM DE CADASTRO-->
-					<form action="cad_usu.php" method="post">
+					<form action="cad_usu.php" method="post" autocomplete="off">
 						<div class="form-group">
 							<label for="nome">
 							Insira seu nome
@@ -142,7 +142,7 @@
 												
 										<form action="pass-perdida.php" method="post">
 											<div class="form-group">
-												<input required type="email" class="form-control" placeholder="Seu e-mail...">
+												<input required name="email" required type="email" class="form-control" placeholder="Seu e-mail...">
 											</div>
 
 											<!--INICIO DO ALERT DE ERRO-->
@@ -152,7 +152,7 @@
 												</button>
 												<b>ATENÇÃO!</b> este e-mail não está cadastrado.
 											</div>
-											<input type="submit" class="btn btn-primary btn-block" value="Recuperar senha">
+											<button class="btn btn-primary btn-block">Recuprar senha</button>
 												
 											
 										</form>
@@ -180,8 +180,8 @@
 
 
 
-<script src="js/valida.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="js/valida-form.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
 </body>
 </html>

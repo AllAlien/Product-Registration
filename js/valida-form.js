@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	//validação alternativa manipulando css
 	$("#submit-cad-usu").click(function(){
 
@@ -13,4 +12,6 @@ $(document).ready(function(){
 			$("#error-nome-cad").css("display", "show");
 		}
 	})
+
+
 })
